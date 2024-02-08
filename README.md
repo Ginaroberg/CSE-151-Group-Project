@@ -26,4 +26,10 @@ Drop industry column
 Tokenized job_description and performed sentiment analysis with TF-IDF
 
 ## Data Visualizations 
+-Created histogram with average company ratings (average between career_opportunities_rating, comp_and_benefits_rating, culture_and_values_rating, senior_management_rating, work_life_balance_rating)
+-Created histogram with company rating to compare with average company rating
+- Created bar grapb with distribution of employment types
+- Created scatterplot to compare average company rating to salary average estimate
+- Created box plot to see salary distribution across the different sectors
+
 
