@@ -3,7 +3,6 @@
 ## Data Preprocessing
 
 Converted the values in the following columns to integers 
-
 - company_founded
 
 Converted the values in the following columns to floats 
@@ -12,12 +11,14 @@ Converted the values in the following columns to floats
 Converted the values in the following columns to lists
 - job_description
 
-Convert Salary Estimate period to years and map it so salary_avg_estimate
--salary_avg_estimate and salary_estimate_payperiod and drop salary_estimate payeriod + rename salary_avg_estime
+Create salary_estimate_per_year column 
+- convert salary_estimate_payperiod into factors of year
+- multiply salary_avg_estimate by salary_estimate_payperiod
+- drop salary_estimate payeriod + rename salary_avg_estimate to salary_avg_estimate_per_year
 
-One hot encode
-- sector,company_size,revenue
+One Hot Encode the following columns 
+- company_size
+- revenue
+- sector
 
-Drop 
-- industry because we are going to use sector instead and too many values
-- sector,company_size,revenue (after one hot encoding for predictive tasks)
+Drop industry column
