@@ -22,3 +22,8 @@ One Hot Encode the following columns
 - sector
 
 Drop industry column
+
+Tokenized job_description and performed sentiment analysis with TF-IDF
+
+## Data Visualizations 
+
