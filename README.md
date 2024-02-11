@@ -2,6 +2,18 @@
 
 ## Data Preprocessing
 
+### Data Imputation
+Almost every column in the dataframe has missing data. We decided to impute missing data in certain ways depending on the column
+- company column: inpute "unknown"
+- company_rating column: imputed the average of 'career_opportunities_rating','comp_and_benefits_rating', 'culture_and_values_rating','senior_management_rating',       
+'work_life_balance_rating' columns.
+- job_description column: dropped the 12 rows of missing data in job_description as we are going to use job description for text analysis.
+- company_size column: impute 'unknown'
+- company_founded column: impute (0000.0) for the missing years
+- employment_type, industry,sector,revenue columns: imputed 'unknown'
+- company related ratings (ex. 'career_opportunities_rating','comp_and_benefits_rating'): impute the average of each column. 
+
+
 Converted the values in the following columns to integers 
 - company_founded
 
