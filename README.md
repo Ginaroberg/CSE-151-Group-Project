@@ -12,6 +12,8 @@ Almost every column in the dataframe has missing data. We decided to impute miss
 - company_founded column: impute (0000.0) for the missing years
 - employment_type, industry,sector,revenue columns: imputed 'unknown'
 - company related ratings (ex. 'career_opportunities_rating','comp_and_benefits_rating'): impute the average of each column.
+- salary_avg_estimate column: imputed values based on knn imputation for salary.
+- salary_estimate_payperiod column: imputed mode of the column as it was diffcult to assess wheter or not salary was yearly,monthly, or hourly
 
 ### Other data processing
 
