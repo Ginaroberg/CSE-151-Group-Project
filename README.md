@@ -13,7 +13,7 @@ Almost every column in the dataframe has missing data. We decided to impute miss
 - employment_type, industry,sector,revenue columns: imputed 'unknown'
 - company related ratings (ex. 'career_opportunities_rating','comp_and_benefits_rating'): impute the average of each column.
 
-### other data processing
+### Other data processing
 
 
 Converted the values in the following columns to integers 
