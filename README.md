@@ -11,7 +11,9 @@ Almost every column in the dataframe has missing data. We decided to impute miss
 - company_size column: impute 'unknown'
 - company_founded column: impute (0000.0) for the missing years
 - employment_type, industry,sector,revenue columns: imputed 'unknown'
-- company related ratings (ex. 'career_opportunities_rating','comp_and_benefits_rating'): impute the average of each column. 
+- company related ratings (ex. 'career_opportunities_rating','comp_and_benefits_rating'): impute the average of each column.
+
+### other data processing
 
 
 Converted the values in the following columns to integers 
