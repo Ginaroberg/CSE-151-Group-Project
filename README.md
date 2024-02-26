@@ -57,6 +57,8 @@ For our first model, we arbitrarily chose to use a random forest classfier becau
  - 'senior_management_rating'       
  - 'work_life_balance_rating'
 
+![features_confusion_matrix](https://github.com/Ginaroberg/CSE-151A-Group-Project/assets/94018260/3257be36-3988-4e93-9c81-722d92a3dc4d)
+
 With this we were able to achieve following metrics:
 
 Training Accuracy: 0.908289241622575
@@ -68,9 +70,24 @@ Validation Mean Squared Error: 1.9507042253521127
 Testing Accuracy: 0.6797752808988764
 Testing Mean Squared Error: 1.1123595505617978
 
+![results_confusion_matrix](https://github.com/Ginaroberg/CSE-151A-Group-Project/assets/94018260/16a13af3-a580-4748-bec8-f22498968842)
 
-4. Where does your model fit in the fitting graph.
+# Fitting Graph
 
-5. What are the next 2 models you are thinking of and why?
+![fitting_graph_rfc](https://github.com/Ginaroberg/CSE-151A-Group-Project/assets/94018260/8cd670cf-364e-4599-9bb6-8db1bbc272ec)
+
+Based on the fitting graph, we can see that the model may be overfitting to the training data.  Because the accuracy for the training data is drastically higher than the accuracy achieved by the accuracy of the validation data, and stays this way when the complexity of the model increases, this indicates overfitting.
+
+# Random Forest Classifier Conclusion
+In conclusion we found that our first model using Random Forest Classifier is overfitting to our training data.  To improve our model, we could further experiment with changing hyperparameters, including max_depth, and min_samples_leaf.  Another approach we could implement would be cross validation to improve our model as well.
+
+# Future Models
+The next two models we would try are SVM and neural networks.  Our reasoning behind trying SVM in our next model is because it can handle non-linear decision boundaries.  Based on our confusion matrix, many of the features do not have a strong correlation with the 'salary_avg_estimate_per_year' and 'salary_range' columns.  As a result, this indicates a non linear relationship salary has with the other features.  SVM could potentially handle this better and produce better predictions.  Our reasoning for attempting neural networks in our next model is also similar, since neural networks can also handle nonlinear relationships.  Another reason we want to attempt using neural networks is because they can utilize other datatypes.  Our dataset contains text data, which we want to try using to improve our salary predictions.
+
+# Link to Jupyter Notebook
+[Open Jupyter Notebook](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/CSE%20151A%20Group%20Project%20Notebook.ipynb)
+
+
+
 
 
