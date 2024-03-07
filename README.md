@@ -89,6 +89,15 @@ In our second model, we decided to attempt using a decision tree classifier.  We
 
 With this model we were able to achieve the following metrics:
 
+Training Accuracy: 0.9065255731922398
+Training Mean Squared Error: 0.4514991181657848
+
+Validation Accuracy: 0.5774647887323944
+Validation Mean Squared Error: 1.8943661971830985
+
+Testing Accuracy: 0.702247191011236
+Testing Mean Squared Error: 1.0337078651685394
+
 # Fitting Graph
 Based on the results of the model and the fitting graph, our model is still overfitting on the training data.
 
