@@ -84,6 +84,20 @@ In conclusion we found that our first model using Random Forest Classifier is ov
 # Future Models
 The next two models we would try are SVM and neural networks.  Our reasoning behind trying SVM in our next model is because it can handle non-linear decision boundaries.  Based on our confusion matrix, many of the features do not have a strong correlation with the 'salary_avg_estimate_per_year' and 'salary_range' columns.  As a result, this indicates a non linear relationship salary has with the other features.  SVM could potentially handle this better and produce better predictions.  Our reasoning for attempting neural networks in our next model is also similar, since neural networks can also handle nonlinear relationships.  Another reason we want to attempt using neural networks is because they can utilize other datatypes.  Our dataset contains text data, which we want to try using to improve our salary predictions.
 
+# Second Model: Decision Tree Classifier
+In our second model, we decided to attempt using a decision tree classifier.  We used the same features to predict salary_range as we did in our random forest classifier. To refine the performance of our model, we performed hyper parameter tuning we used grid search cv. Based on the results, we were able to find our best model.
+
+With this model we were able to achieve the following metrics:
+
+# Fitting Graph
+Based on the results of the model and the fitting graph, our model is still overfitting on the training data.
+
+# Decision Tree Classifier Conclusion
+With this model, we were able to achieve a higher accuracy.  The model is not overfitting as much, but there is still a significant difference between the training and testing mean-squared error.
+
+# Future Models 
+The next model we plan to try is neural networks.  This is our next approach because it can possibly utilize the other types of data from our dataset. 
+
 # Link to Jupyter Notebook
 [Open Jupyter Notebook](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/CSE%20151A%20Group%20Project%20Notebook.ipynb)
 
