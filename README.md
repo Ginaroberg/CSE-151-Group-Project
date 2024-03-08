@@ -101,7 +101,7 @@ Testing Mean Squared Error: 1.0337078651685394
 # Fitting Graph
 Based on the results of the model and the fitting graph, our model is still overfitting on the training data.
 
-![fitting_graph_rfc](https://github.com/Ginaroberg/CSE-151A-Group-Project/assets/94018260/8cd670cf-364e-4599-9bb6-8db1bbc272ec)
+![fitting_graph_rfc](https://github.com/Ginaroberg/CSE-151A-Group-Project/decision_tree.jpg)
 
 # Decision Tree Classifier Conclusion
 With this model, we were able to achieve a higher accuracy.  The model is not overfitting as much, but there is still a significant difference between the training and testing mean-squared error.
