@@ -6,6 +6,8 @@ In today's competitive job market, having insights into salary ranges is essenti
 # Methods
 
 ## Data Exploration
+In our data exploration, we delved into various aspects of the Glassdoor Data Science Jobs - 2024 dataset to gain insights into job listings, company attributes, and salary estimates. ![Image Alt Text](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/Average_Company_Rating_vs_Salary_Average_Estimate.jpg)
+
 
 
 
