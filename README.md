@@ -118,6 +118,17 @@ With this model, we were able to achieve a higher accuracy.  The model is not ov
 # Future Models 
 The next model we plan to try is neural networks.  This is our next approach because it can possibly utilize the other types of data from our dataset. 
 
+# Model 3: XG Boost
+
+# Results
+
+# Discussion
+
+# Conclusion 
+
+# Collaboration
+
+
 # Link to Jupyter Notebook
 [Open Jupyter Notebook](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/CSE%20151A%20Group%20Project%20Notebook.ipynb)
 
