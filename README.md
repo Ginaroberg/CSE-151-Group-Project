@@ -1,6 +1,15 @@
 # CSE-151-Group-Project
 
-## Data Preprocessing
+# Introduction
+In today's competitive job market, having insights into salary ranges is essential for informed career decisions. Glassdoor provides extensive data on job listings, salaries, and companies. Using the Glassdoor Data Science Jobs - 2024 dataset, we aimed to find patterns between job attributes and salary ranges. This dataset includes job requirements, company ratings, salary, and more. This project offers insights for job seekers, empowering them to make informed career decisions. Additionally, it has the potential to reveal hidden trends and address issues like wage inequality. A good predictive model for salary ranges can benefit people by providing clarity on salary expectations and helping employers provide competitive compensation to attract talent. Overall, this project aims to foster transparency and efficiency in the labor market, benefiting individuals and organizations in the data science industry.
+
+# Methods
+
+## Data Exploration
+
+
+
+## Preprocessing
 Converted the values in the following columns to integers 
 - company_founded
 
@@ -37,17 +46,17 @@ Almost every column in the dataframe has missing data. We decided to impute miss
 - salary_avg_estimate column: imputed values based on knn imputation for salary.
 - salary_estimate_payperiod column: imputed mode of the column as it was diffcult to assess wheter or not salary was yearly,monthly, or hourly
 
-## Data Visualizations 
+### Data Visualizations 
 - Created histogram with average company ratings (average between career_opportunities_rating, comp_and_benefits_rating, culture_and_values_rating, senior_management_rating, work_life_balance_rating)
 - Created histogram with company rating to compare with average company rating
-- Created bar grapb with distribution of employment types
+- Created bar graph with distribution of employment types
 - Created scatterplot to compare average company rating to salary average estimate
 - Created box plot to see salary distribution across the different sectors
 
 # Predictive Task 
 Our goal is to predict the range that a company's average estimated annual salary will fall into, based on various features.  We want to discover what features will have the highest correlation with the average estimated annual salary.  This means we are performing classification, based on the 8 differen salary ranges, that we created based on the average estimated annual salaries from the data.
 
-# First Model: Random Forest Classifier
+# Model 1: Random Forest Classifier
 For our first model, we arbitrarily chose to use a random forest classfier because we wanted to gauge how a model would initially perform for our classification task.  We used the following features to predict salary_range: 
  - 'company_rating'
  - 'company_founded'
@@ -72,19 +81,19 @@ Testing Mean Squared Error: 1.1123595505617978
 
 ![results_confusion_matrix](https://github.com/Ginaroberg/CSE-151A-Group-Project/assets/94018260/16a13af3-a580-4748-bec8-f22498968842)
 
-# Fitting Graph
+## Fitting Graph
 
 ![fitting_graph_rfc](https://github.com/Ginaroberg/CSE-151A-Group-Project/assets/94018260/8cd670cf-364e-4599-9bb6-8db1bbc272ec)
 
 Based on the fitting graph, we can see that the model may be overfitting to the training data.  Because the accuracy for the training data is drastically higher than the accuracy achieved by the accuracy of the validation data, and stays this way when the complexity of the model increases, this indicates overfitting.
 
-# Random Forest Classifier Conclusion
+## Random Forest Classifier Conclusion
 In conclusion we found that our first model using Random Forest Classifier is overfitting to our training data.  To improve our model, we could further experiment with changing hyperparameters, including max_depth, and min_samples_leaf.  Another approach we could implement would be cross validation to improve our model as well.
 
 # Future Models
 The next two models we would try are SVM and neural networks.  Our reasoning behind trying SVM in our next model is because it can handle non-linear decision boundaries.  Based on our confusion matrix, many of the features do not have a strong correlation with the 'salary_avg_estimate_per_year' and 'salary_range' columns.  As a result, this indicates a non linear relationship salary has with the other features.  SVM could potentially handle this better and produce better predictions.  Our reasoning for attempting neural networks in our next model is also similar, since neural networks can also handle nonlinear relationships.  Another reason we want to attempt using neural networks is because they can utilize other datatypes.  Our dataset contains text data, which we want to try using to improve our salary predictions.
 
-# Second Model: Decision Tree Classifier
+# Model 2: Decision Tree Classifier
 In our second model, we decided to attempt using a decision tree classifier.  We used the same features to predict salary_range as we did in our random forest classifier. To refine the performance of our model, we performed hyper parameter tuning where we used grid search cv with the parameters for decision tree which were criterion, splitter, max_depth, and min_samples_split. Based on the results, we were able to find our best model.
 
 With this model we were able to achieve the following metrics:
