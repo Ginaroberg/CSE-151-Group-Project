@@ -10,56 +10,56 @@ In our data exploration, we delved into various aspects of the Glassdoor Data Sc
 
  We began by visualizing the distribution of average company ratings, computed as the average of ratings related to career opportunities, compensation and benefits, culture and values, senior management, and work-life balance. This histogram provided a comprehensive overview of company ratings, enabling us to identify trends and outliers in employer satisfaction. The histogram shows that the data has an overall normal distribution, slightly skewed left with most average ratings between 3.5 and 4.0. Notably, there are more ratings on the right side of the mode compared to the left side. This distribution indicates that a significant proportion of companies in the dataset are perceived favorably by employees, with ratings clustered around the higher end of the scale
 
+  ![Image Alt Text](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/Distribution_of_company_rating.jpg)
 
+  Additionally,  we created histogram with company rating to compare with average company rating to gauge any disparities or correlations between these metrics.  Unlike the histogram for average company ratings, this histogram does not exhibit a normal distribution. However, it is evident that the majority of ratings still fall within the range of 3.5 to 4.0, which aligns with our observations from the previous analysis. Interestingly, the distribution of ratings remains skewed left, indicating that most companies tend to receive favorable ratings, with fewer instances of lower ratings.
+  
+Furthermore, we examined the distribution of employment types across job listings, offering insights into the prevalence of full-time, part-time, and contract positions. Moreover, we investigated the relationship between average company rating and salary average estimate through a scatterplot, aiming to discern any associations between employer reputation and compensation levels. Lastly, we utilized a box plot to visualize the salary distribution across different sectors, allowing for comparisons and identification of sectors with higher salary ranges. Through these data visualizations, we gained valuable insights into the job market landscape, providing a foundation for further analysis and model development.
 
 
 ## Preprocessing
-Converted the values in the following columns to integers 
-- company_founded
+In the data preprocessing phase, we focused on preparing the dataset for analysis by converting values into appropriate formats, handling missing data, and performing feature engineering. Firstly, we converted the "company_founded" column to integers and the "salary_avg_estimate" column to floats to ensure numerical accuracy. Additionally, we transformed the "job_description" column into lists and created a new column "salary_estimate_per_year" by converting salary estimates to yearly values based on the "salary_estimate_payperiod" factor. To address missing data, we imputed values using various strategies. For the "company" column, we filled in missing entries with "unknown" to maintain completeness. Similarly, we imputed missing values in the "company_size" column with "unknown" and replaced NaNs in the "company_founded" column with "0000.0" for consistency. For categorical columns like "employment_type," "industry," "sector," and "revenue," we used "unknown" as a placeholder for missing values. To handle missing ratings for companies, we computed the average of relevant rating columns such as 'career_opportunities_rating,' 'comp_and_benefits_rating,' 'culture_and_values_rating,' 'senior_management_rating,' and 'work_life_balance_rating.' This approach ensured that missing company ratings were replaced with reasonable estimates based on other available data. For the "salary_avg_estimate" column, we employed k-nearest neighbors (KNN) imputation to fill in missing salary values, leveraging the similarity between instances to infer missing values more accurately. Additionally, we imputed the mode of the "salary_estimate_payperiod" column to determine the most common pay period, whether yearly, monthly, or hourly. Overall, our data preprocessing efforts involved converting data types, handling missing values through imputation, and performing feature engineering to prepare the dataset for further analysis, ensuring its integrity and reliability in subsequent modeling tasks.
 
-Converted the values in the following columns to floats 
-- salary_avg_estimate
+df.head()
 
-Converted the values in the following columns to lists
-- job_description
 
-Create salary_estimate_per_year column 
-- convert salary_estimate_payperiod into factors of year
-- multiply salary_avg_estimate by salary_estimate_payperiod
-- drop salary_estimate payeriod + rename salary_avg_estimate to salary_avg_estimate_per_year
+Model 1
+Our first model was a RandomForestClassifier. We used the following features to classify salary_range: 
+ - 'company_rating'
+ - 'company_founded'
+ - 'career_opportunities_rating'
+ - 'comp_and_benefits_rating'      
+ - 'culture_and_values_rating'     
+ - 'senior_management_rating'       
+ - 'work_life_balance_rating'
+We scaled the data using MinMaxScaler().  We used a parameter of n_estimators=100.
+Model 2
+Our second model was a Decision Tree Classifier. We used the following features to classify the salary_range:
+ - 'company_rating'
+ - 'company_founded'
+ - 'career_opportunities_rating'
+ - 'comp_and_benefits_rating'      
+ - 'culture_and_values_rating'     
+ - 'senior_management_rating'       
+ - 'work_life_balance_rating'
+Using these features, we hyperparameter turned the following parameters for the decision tree: 'criterion': ['gini', 'entropy', 'log_loss'],
+    'splitter': ['best'],
+    'max_depth': [None, 10, 20, 30],
+    'min_samples_split': [2]
 
-One Hot Encode the following columns 
-- company_size
-- revenue
-- sector
+Model 3
+Our third model was a XGboost. We used the following features to classify the salary_range:
+ - 'company_rating'
+ - 'company_founded'
+ - 'career_opportunities_rating'
+ - 'comp_and_benefits_rating'      
+ - 'culture_and_values_rating'     
+ - 'senior_management_rating'       
+ - 'work_life_balance_rating'
 
-Drop industry column
+For XgBoost we first started with a learning rate of .05 as well as default parameters. We then ran grid search cv to find the optimal parameters to reduce overfitting. After running grid search cv for learning rate, max_depth, n_estimamtors, subsample, and colsampe_bytree with cv =5 and scoring = accuracy we were able to find the best parameters which were {'colsample_bytree': 0.8, 'learning_rate': 0.05, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
 
-Tokenized job_description and performed sentiment analysis with TF-IDF
-
-### Data Imputation
-Almost every column in the dataframe has missing data. We decided to impute missing data in certain ways depending on the column
-- company column: inpute "unknown"
-- company_rating column: imputed the average of 'career_opportunities_rating','comp_and_benefits_rating', 'culture_and_values_rating','senior_management_rating',       
-'work_life_balance_rating' columns.
-- job_description column: dropped the 12 rows of missing data in job_description as we are going to use job description for text analysis.
-- company_size column: impute 'unknown'
-- company_founded column: impute (0000.0) for the missing years
-- employment_type, industry,sector,revenue columns: imputed 'unknown'
-- company related ratings (ex. 'career_opportunities_rating','comp_and_benefits_rating'): impute the average of each column.
-- salary_avg_estimate column: imputed values based on knn imputation for salary.
-- salary_estimate_payperiod column: imputed mode of the column as it was diffcult to assess wheter or not salary was yearly,monthly, or hourly
-
-### Data Visualizations 
-- Created histogram with average company ratings (average between career_opportunities_rating, comp_and_benefits_rating, culture_and_values_rating, senior_management_rating, work_life_balance_rating)
-- Created histogram with company rating to compare with average company rating
-- Created bar graph with distribution of employment types
-- Created scatterplot to compare average company rating to salary average estimate
-- Created box plot to see salary distribution across the different sectors
-
-# Predictive Task 
-Our goal is to predict the range that a company's average estimated annual salary will fall into, based on various features.  We want to discover what features will have the highest correlation with the average estimated annual salary.  This means we are performing classification, based on the 8 differen salary ranges, that we created based on the average estimated annual salaries from the data.
-
+# Resutlts
 # Model 1: Random Forest Classifier
 For our first model, we arbitrarily chose to use a random forest classfier because we wanted to gauge how a model would initially perform for our classification task.  We used the following features to predict salary_range: 
  - 'company_rating'
@@ -83,7 +83,7 @@ Validation Mean Squared Error: 1.9507042253521127
 Testing Accuracy: 0.6797752808988764
 Testing Mean Squared Error: 1.1123595505617978
 
-![results_confusion_matrix](https://github.com/Ginaroberg/CSE-151A-Group-Project/assets/94018260/16a13af3-a580-4748-bec8-f22498968842)
+![results_confusion_matrix](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/Confusion_Matrix_RFC.jpg)
 
 ## Fitting Graph
 
@@ -124,13 +124,20 @@ The next model we plan to try is neural networks.  This is our next approach bec
 
 # Model 3: XG Boost
 
-# Results
+Our third model was XG Boost. Our baseline model only included learning rate as a parameter, we ended up using .05 as our learning rate and our baseline model achieved an accuracy score of .3802 and an accuracy of .90 on our training data.  We then created our hyperparameter tuned model and achieved an accuracy score of the test dataset of .623 and an accuracy score of .750 on our training dataset.
+![fitting_graph_rfc](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/xgb_fitting.png)
 
 # Discussion
+
 
 # Conclusion 
 
 # Collaboration
+This is where you do a mind dump on your opinions and possible future directions. Basically what you wish you could have done differently. Here you close with final thoughts
+
+One of the biggest aspects we could have done differently was finding different ways to incorporate all the data we had in our dataset.  An aspect that we could have done differently was implementing TF-IDF for the job_descriptions.  When we were performing our data preprocessing, we were trying to convert our data to be in the most usable form, like one-hot encoding categorical values.  We wanted to find a way to implement the job_description column.  Since it was text data, we thought we could perform sentiment analysis using TF-IDF.  However, we face difficulties with implementing it without adding on hundreds of columns. Since each text description had multiple words, we were unsure of how to relate the value to the salary range and use it as a feature.  We could have tried to implement the other columns that contained data of non-numerical form as a feature for our model. Additionally, we continuously used the same columns for all of our models.  We could have experimented and tried to implement more variety or refined what we used more. Overall, we were thorough in examining our models and their performance, but there are aspects we have learned that we can keep in mind for future projects.
+
+
 
 
 # Link to Jupyter Notebook
