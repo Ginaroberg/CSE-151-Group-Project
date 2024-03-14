@@ -99,13 +99,13 @@ Testing Mean Squared Error: 1.1123595505617978
 
 ![results_confusion_matrix](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/Confusion_Matrix_RFC.jpg)
 
-## Fitting Graph
+# Fitting Graph
 
 ![fitting_graph_rfc](https://github.com/Ginaroberg/CSE-151A-Group-Project/assets/94018260/8cd670cf-364e-4599-9bb6-8db1bbc272ec)
 
 Based on the fitting graph, we can see that the model may be overfitting to the training data.  Because the accuracy for the training data is drastically higher than the accuracy achieved by the accuracy of the validation data, and stays this way when the complexity of the model increases, this indicates overfitting.
 
-## Random Forest Classifier Conclusion
+# Random Forest Classifier Conclusion
 In conclusion we found that our first model using Random Forest Classifier is overfitting to our training data.  To improve our model, we could further experiment with changing hyperparameters, including max_depth, and min_samples_leaf.  Another approach we could implement would be cross validation to improve our model as well.
 
 # Future Models
@@ -134,11 +134,15 @@ Based on the results of the model and the fitting graph, our model is still over
 With this model, we were able to achieve a higher accuracy.  The model is not overfitting as much, but there is still a significant difference between the training and testing mean-squared error.
 
 # Future Models 
-The next model we plan to try is neural networks.  This is our next approach because it can possibly utilize the other types of data from our dataset. 
+The next model we plan to try is neural networks or XGBoost.  This is our next approach because it can possibly utilize the other types of data from our dataset. 
 
 # Model 3: XG Boost
 
 Our third model was XG Boost. Our baseline model only included learning rate as a parameter, we ended up using .05 as our learning rate and our baseline model achieved an accuracy score of .3802 and an accuracy of .90 on our training data.  We then created our hyperparameter tuned model and achieved an accuracy score of the test dataset of .623 and an accuracy score of .750 on our training dataset.
+
+# Fitting Graph
+Based on the results of the model and the fitting graph, our model is still overfitting on the training data.
+
 ![fitting_graph_rfc](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/xgb_fitting.png)
 
 # Discussion
@@ -157,12 +161,12 @@ One of the biggest aspects we could have done differently was finding different 
 
 
 # Collaboration
-This is where you do a mind dump on your opinions and possible future directions. Basically what you wish you could have done differently. Here you close with final thoughts
-
-One of the biggest aspects we could have done differently was finding different ways to incorporate all the data we had in our dataset.  An aspect that we could have done differently was implementing TF-IDF for the job_descriptions.  When we were performing our data preprocessing, we were trying to convert our data to be in the most usable form, like one-hot encoding categorical values.  We wanted to find a way to implement the job_description column.  Since it was text data, we thought we could perform sentiment analysis using TF-IDF.  However, we face difficulties with implementing it without adding on hundreds of columns. Since each text description had multiple words, we were unsure of how to relate the value to the salary range and use it as a feature.  We could have tried to implement the other columns that contained data of non-numerical form as a feature for our model. Additionally, we continuously used the same columns for all of our models.  We could have experimented and tried to implement more variety or refined what we used more. Overall, we were thorough in examining our models and their performance, but there are aspects we have learned that we can keep in mind for future projects.
-
-
-
+William Kam: Preprocessing, Model 1, Model 3, final readMe, result ,discussion, and method sections
+Nilay Menon: Arranged meeting times,Data Cleaning (Imputation) Model 2 implementation and results, Model 3 exploration, README contribution for model 2, discussion section, and method section. 
+Gina Roberg: Data Preprocessing, Model 1, Model 2, Final readMe, Methods, Discussion, Conclusion
+Tracy Pham: Did milestone 1, Data Exploration, finding models to explore, Introduction, Methods, Final readMe
+Daniel Park: Searching for Datasets, Data Preprocessing, Data Visualizations, Model Exploration for Model 3
+Joseph Guzman:  Explored Datasets, Data Cleaning, Preprocessing, Model exploration for Model 2 & 3 
 
 # Link to Jupyter Notebook
 [Open Jupyter Notebook](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/CSE%20151A%20Group%20Project%20Notebook.ipynb)
