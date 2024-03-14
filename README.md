@@ -44,6 +44,7 @@ Our first model was a RandomForestClassifier. We used the following features to 
  - 'senior_management_rating'       
  - 'work_life_balance_rating'
 We scaled the data using MinMaxScaler().  We used a parameter of n_estimators=100.
+
 Model 2
 Our second model was a Decision Tree Classifier. We used the following features to classify the salary_range:
  - 'company_rating'
