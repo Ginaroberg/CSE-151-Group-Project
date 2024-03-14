@@ -43,6 +43,7 @@ Our first model was a RandomForestClassifier. We used the following features to 
  - 'culture_and_values_rating'     
  - 'senior_management_rating'       
  - 'work_life_balance_rating'
+   
 We scaled the data using MinMaxScaler().  We used a parameter of n_estimators=100.
 
 Model 2
@@ -54,6 +55,7 @@ Our second model was a Decision Tree Classifier. We used the following features 
  - 'culture_and_values_rating'     
  - 'senior_management_rating'       
  - 'work_life_balance_rating'
+   
 Using these features, we hyperparameter turned the following parameters for the decision tree: 'criterion': ['gini', 'entropy', 'log_loss'],
     'splitter': ['best'],
     'max_depth': [None, 10, 20, 30],
