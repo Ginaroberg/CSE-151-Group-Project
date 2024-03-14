@@ -73,7 +73,7 @@ Our third model was a XGboost. We used the following features to classify the sa
 
 For XgBoost we first started with a learning rate of .05 as well as default parameters. We then ran grid search cv to find the optimal parameters to reduce overfitting. After running grid search cv for learning rate, max_depth, n_estimamtors, subsample, and colsampe_bytree with cv =5 and scoring = accuracy we were able to find the best parameters which were {'colsample_bytree': 0.8, 'learning_rate': 0.05, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}
 
-# Resutlts
+# Results
 # Model 1: Random Forest Classifier
 For our first model, we arbitrarily chose to use a random forest classfier because we wanted to gauge how a model would initially perform for our classification task.  We used the following features to predict salary_range: 
  - 'company_rating'
