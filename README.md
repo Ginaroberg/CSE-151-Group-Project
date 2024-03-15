@@ -9,15 +9,19 @@ In today's competitive job market, having insights into salary ranges is essenti
 In our data exploration, we delved into various aspects of the Glassdoor Data Science Jobs - 2024 dataset to gain insights into job listings, company attributes, and salary estimates. 
 
 ![Image Alt Text](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/Distribution_of_average_company_rating.jpg)
+
  We began by visualizing the distribution of average company ratings, computed as the average of ratings related to career opportunities, compensation and benefits, culture and values, senior management, and work-life balance. This histogram provided a comprehensive overview of company ratings, enabling us to identify trends and outliers in employer satisfaction. The histogram shows that the data has an overall normal distribution, slightly skewed left with most average ratings between 3.5 and 4.0. Notably, there are more ratings on the right side of the mode compared to the left side. This distribution indicates that a significant proportion of companies in the dataset are perceived favorably by employees, with ratings clustered around the higher end of the scale
 
  ![Image Alt Text](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/Distribution_of_company_rating.jpg)
+ 
   Additionally,  we created histogram with company rating to compare with average company rating to gauge any disparities or correlations between these metrics.  Unlike the histogram for average company ratings, this histogram does not exhibit a normal distribution. However, it is evident that the majority of ratings still fall within the range of 3.5 to 4.0, which aligns with our observations from the previous analysis. Interestingly, the distribution of ratings remains skewed left, indicating that most companies tend to receive favorable ratings, with fewer instances of lower ratings.
   
 ![Image Alt Text](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/Distribution_of_employment_type.jpg)
+
 We generated a countplot to visualize the distribution of employment types, revealing that the majority of companies either had a public or private status, while a considerable portion of the data had missing values for this attribute. As a result, due to the high prevalence of missing values, we decided not to include employment type as a feature in our predictive model.
 
 ![Image Alt Text](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/Salary_vs_Average_Rating.jpg)
+
  We generated a countplot to visualize the distribution of employment types, revealing that the majority of companies either had a public or private status, while a considerable portion of the data had missing values for this attribute. As a result, due to the high prevalence of missing values, we decided not to include employment type as a feature in our predictive model.
 
 
