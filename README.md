@@ -89,6 +89,7 @@ For our first model, we arbitrarily chose to use a random forest classfier becau
  - 'work_life_balance_rating'
 
 ![features_confusion_matrix](https://github.com/Ginaroberg/CSE-151A-Group-Project/assets/94018260/3257be36-3988-4e93-9c81-722d92a3dc4d)
+
 We generated a correlation heat map to explore the relationships between various attributes in our dataset. This analysis revealed strong correlations among different types of ratings, indicating that a company’s rating for different aspects are correlated. Additionally, we observed a notable correlation between salary range and average estimated annual salary, suggesting that these two variables are closely related. However, the remaining attributes showed weaker correlations with each other.
 
 With this we were able to achieve following metrics:
@@ -103,6 +104,7 @@ Testing Accuracy: 0.6797752808988764
 Testing Mean Squared Error: 1.1123595505617978
 
 ![results_confusion_matrix](https://github.com/Ginaroberg/CSE-151A-Group-Project/blob/main/Confusion_Matrix_RFC.jpg)
+
 We created a confusion matrix to show the performance of our Random Forest Classifier by illustrating its predictions in comparison to the actual classes in the test set. It is showing the correlation between the predicted salary ranges based on company ratings and the actual salary ranges. Based on the confusion matrix, we can see that our model mostly predicted for salaries in the range 0 and 1 and the predictions are not very accurate.
 
 # Fitting Graph
