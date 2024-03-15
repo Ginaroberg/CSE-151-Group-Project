@@ -172,7 +172,7 @@ Nilay Menon: Arranged meeting times,Data Cleaning (Imputation) Model 2 implement
 
 Gina Roberg: Data Preprocessing, Model 1, Model 2, Final readMe, Methods, Discussion, Conclusion
 
-Tracy Pham: Did milestone 1, Data Visualizations, Model Exploration for Model 2 & 3, Introduction, Methods, Final readMe
+Tracy Pham: Milestone 1, Data Visualizations, Model Exploration for Model 2 & 3, Introduction, Methods, Final readMe
 
 Daniel Park: Searching for Datasets, Data Preprocessing, Data Visualizations, Model Exploration for Model 3
 
