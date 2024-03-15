@@ -167,10 +167,15 @@ One of the biggest aspects we could have done differently was finding different 
 
 # Collaboration
 William Kam: Preprocessing, Model 1, Model 3, final readMe, result ,discussion, and method sections
+
 Nilay Menon: Arranged meeting times,Data Cleaning (Imputation) Model 2 implementation and results, Model 3 exploration, README contribution for model 2, discussion section, and method section. 
+
 Gina Roberg: Data Preprocessing, Model 1, Model 2, Final readMe, Methods, Discussion, Conclusion
+
 Tracy Pham: Did milestone 1, Data Visualizations, Model Exploration for Model 2 & 3, Introduction, Methods, Final readMe
+
 Daniel Park: Searching for Datasets, Data Preprocessing, Data Visualizations, Model Exploration for Model 3
+
 Joseph Guzman:  Explored Datasets, Data Cleaning, Preprocessing, Model exploration for Model 2 & 3 
 
 # Link to Jupyter Notebook
