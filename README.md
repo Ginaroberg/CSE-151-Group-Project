@@ -1,5 +1,5 @@
 # CSE-151-Group-Project
-### By Nilay Menon, William Kam, Gina Roberg, Tracy Pham, Daniel Park, Joseph Guzman
+#### By Nilay Menon, William Kam, Gina Roberg, Tracy Pham, Daniel Park, Joseph Guzman
 
 # Introduction
 In today's competitive job market, having insights into salary ranges is essential for informed career decisions. Glassdoor provides extensive data on job listings, salaries, and companies. Using the Glassdoor Data Science Jobs - 2024 dataset, we aimed to find patterns between job attributes and salary ranges. This dataset includes job requirements, company ratings, salary, and more. This project offers insights for job seekers, empowering them to make informed career decisions. Additionally, it has the potential to reveal hidden trends and address issues like wage inequality. A good predictive model for salary ranges can benefit people by providing clarity on salary expectations and helping employers provide competitive compensation to attract talent. Overall, this project aims to foster transparency and efficiency in the labor market, benefiting individuals and organizations in the data science industry.
